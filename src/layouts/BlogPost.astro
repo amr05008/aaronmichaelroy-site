@@ -11,15 +11,31 @@ interface Props {
 }
 
 const { title, description, pubDate, updatedDate, heroImage, categories } = Astro.props;
+
+// Calculate reading time (rough estimate: 200 words per minute)
+const content = await Astro.slots.render('default');
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+
+// Format canonical URL to match WordPress structure
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<BaseLayout title={title} description={description}>
-  <article class="prose prose-lg dark:prose-invert mx-auto px-4 py-12">
-    {heroImage && <img src={heroImage} alt={title} class="w-full rounded-lg mb-8" />}
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <!-- Back link -->
+    <div class="mb-8">
+      <a href="/writing" class="text-sm text-gray-600 hover:text-gray-900 transition-colors inline-flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        Writing
+      </a>
+    </div>
 
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold mb-4">{title}</h1>
-      <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
+    <!-- Article Header -->
+    <header class="mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">{title}</h1>
+
+      <div class="flex items-center gap-3 text-sm text-gray-600">
         <time datetime={pubDate.toISOString()}>
           {pubDate.toLocaleDateString('en-us', {
             year: 'numeric',
@@ -27,29 +43,53 @@ const { title, description, pubDate, updatedDate, heroImage, categories } = Astr
             day: 'numeric',
           })}
         </time>
-        {updatedDate && (
-          <span class="italic">
-            (Updated {updatedDate.toLocaleDateString('en-us', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })})
-          </span>
-        )}
+        <span>•</span>
+        <span>{readingTime} min read</span>
       </div>
-      {categories && categories.length > 0 && (
-        <div class="flex gap-2 mt-4">
-          {categories.map((category) => (
-            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
-              {category}
-            </span>
-          ))}
+
+      {updatedDate && (
+        <div class="mt-2 text-sm text-gray-500 italic">
+          Updated {updatedDate.toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
         </div>
       )}
     </header>
 
-    <div class="blog-content">
+    <!-- Article Content -->
+    <div class="prose prose-lg max-w-none
+      prose-headings:font-semibold prose-headings:tracking-tight
+      prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+      prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+      prose-p:leading-relaxed prose-p:mb-6
+      prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
+      prose-img:rounded-lg prose-img:my-8
+      prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:before:content-none prose-code:after:content-none
+      prose-pre:bg-gray-900 prose-pre:text-gray-100
+      prose-ul:my-6 prose-li:my-2
+      prose-strong:font-semibold
+      prose-blockquote:border-l-4 prose-blockquote:border-gray-300 prose-blockquote:pl-6 prose-blockquote:italic">
       <slot />
     </div>
   </article>
+
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate.toISOString(),
+    "dateModified": (updatedDate || pubDate).toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": "Aaron Michael Roy"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Aaron Michael Roy"
+    }
+  })} />
 </BaseLayout>

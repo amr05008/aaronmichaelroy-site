@@ -4,30 +4,54 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  canonicalURL?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogImage, canonicalURL } = Astro.props;
 const siteTitle = 'Aaron Michael Roy';
+const siteDescription = 'Product manager, writer, and tech enthusiast';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
+const metaDescription = description || siteDescription;
+const currentURL = canonicalURL || new URL(Astro.url.pathname, Astro.site).toString();
+const defaultOGImage = new URL('/og-image.png', Astro.site).toString();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description || 'Product manager, writer, and tech enthusiast'} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={metaDescription} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={currentURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={currentURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={ogImage || defaultOGImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={currentURL} />
+    <meta property="twitter:title" content={fullTitle} />
+    <meta property="twitter:description" content={metaDescription} />
+    <meta property="twitter:image" content={ogImage || defaultOGImage} />
   </head>
-  <body class="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    <header class="border-b border-gray-200 dark:border-gray-800">
-      <nav class="max-w-4xl mx-auto px-4 py-6 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold">{siteTitle}</a>
-        <div class="flex gap-6">
-          <a href="/blog" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
-          <a href="/about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+  <body class="min-h-screen bg-white text-gray-900 antialiased">
+    <header class="border-b border-gray-200">
+      <nav class="max-w-3xl mx-auto px-6 py-8 flex justify-between items-center">
+        <a href="/" class="text-xl font-semibold tracking-tight hover:text-gray-600 transition-colors">{siteTitle}</a>
+        <div class="flex gap-8 text-sm">
+          <a href="/writing" class="hover:text-gray-600 transition-colors">Writing</a>
+          <a href="/about" class="hover:text-gray-600 transition-colors">About</a>
         </div>
       </nav>
     </header>
@@ -36,9 +60,9 @@ const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
       <slot />
     </main>
 
-    <footer class="border-t border-gray-200 dark:border-gray-800 mt-16">
-      <div class="max-w-4xl mx-auto px-4 py-8 text-center text-gray-600 dark:text-gray-400 text-sm">
-        <p>&copy; {new Date().getFullYear()} Aaron Michael Roy. All rights reserved.</p>
+    <footer class="border-t border-gray-200 mt-24">
+      <div class="max-w-3xl mx-auto px-6 py-12 text-sm text-gray-600">
+        <p>&copy; {new Date().getFullYear()} Aaron Michael Roy</p>
       </div>
     </footer>
   </body>

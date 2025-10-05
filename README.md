@@ -142,11 +142,71 @@ updatedDate: 2025-01-20
 ## URL Structure
 
 - Homepage: `/`
-- Blog listing: `/blog`
-- Individual posts: `/blog/post-slug`
+- Writing archive: `/writing`
+- Individual posts: `/post-slug` (matches WordPress structure)
 - About page: `/about`
 
 URLs are automatically generated from the markdown filename/slug to preserve WordPress URLs.
+
+## Migration TODO List
+
+### ✅ Completed
+- [x] Create Astro project structure
+- [x] Install dependencies (Astro, MDX, Tailwind, sitemap)
+- [x] Migrate 29 WordPress posts to Markdown
+- [x] Download and organize 54 images
+- [x] Build clean, readable blog design
+- [x] Create homepage with intro and recent posts
+- [x] Create writing archive page (grouped by year)
+- [x] Build blog post template with reading time
+- [x] Add SEO meta tags (OG, Twitter Cards, canonical URLs)
+- [x] Add structured data (JSON-LD for blog posts)
+- [x] Configure URL structure to match WordPress
+- [x] Remove XML file and secure repo
+
+### 🔲 Remaining Tasks
+
+#### Content Review
+- [ ] Review all 29 migrated blog posts for formatting issues
+- [ ] Verify all images are displaying correctly
+- [ ] Check for any broken internal links
+- [ ] Update About page with actual bio content
+- [ ] Add social media links (verify Twitter/LinkedIn URLs)
+
+#### Design & UX
+- [ ] Test site on mobile devices (phone, tablet)
+- [ ] Create favicon (replace default `/public/favicon.svg`)
+- [ ] Create Open Graph image (`/public/og-image.png`)
+- [ ] Consider adding dark mode toggle (optional)
+- [ ] Add syntax highlighting theme customization (if needed)
+
+#### SEO & Performance
+- [ ] Test all old WordPress URLs redirect properly
+- [ ] Submit sitemap to Google Search Console
+- [ ] Add Google Analytics or privacy-friendly alternative
+- [ ] Optimize images (use WebP format, compression)
+- [ ] Test page speed with Lighthouse
+
+#### Pre-Launch
+- [ ] Verify RSS feed is working (if needed, add @astrojs/rss)
+- [ ] Test site in production build (`npm run build && npm run preview`)
+- [ ] Set up 301 redirects from WordPress to Astro (if different domain)
+- [ ] Create vercel.json config for any special redirects
+
+#### Deployment
+- [ ] Push code to GitHub
+- [ ] Connect GitHub repo to Vercel
+- [ ] Configure custom domain (aaronmichaelroy.com)
+- [ ] Update DNS records
+- [ ] Verify SSL certificate
+- [ ] Test production site thoroughly
+- [ ] Update WordPress to redirect to new site (or shut down)
+
+#### Post-Launch
+- [ ] Monitor for 404 errors
+- [ ] Set up error tracking (Sentry, etc.)
+- [ ] Announce migration on social media
+- [ ] Update any external links pointing to old WordPress URLs
 
 ## License
 
