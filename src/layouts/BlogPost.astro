@@ -1,0 +1,55 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string;
+  categories?: string[];
+}
+
+const { title, description, pubDate, updatedDate, heroImage, categories } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="prose prose-lg dark:prose-invert mx-auto px-4 py-12">
+    {heroImage && <img src={heroImage} alt={title} class="w-full rounded-lg mb-8" />}
+
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold mb-4">{title}</h1>
+      <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400 text-sm">
+        <time datetime={pubDate.toISOString()}>
+          {pubDate.toLocaleDateString('en-us', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        {updatedDate && (
+          <span class="italic">
+            (Updated {updatedDate.toLocaleDateString('en-us', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })})
+          </span>
+        )}
+      </div>
+      {categories && categories.length > 0 && (
+        <div class="flex gap-2 mt-4">
+          {categories.map((category) => (
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">
+              {category}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <div class="blog-content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout title="Blog" description="Articles about product management, startups, and technology">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-12">Blog</h1>
+
+    <div class="space-y-8">
+      {allPosts.map((post) => (
+        <article class="border-b border-gray-200 dark:border-gray-800 pb-8">
+          <a href={`/blog/${post.slug}`} class="group">
+            <h2 class="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+              {post.data.title}
+            </h2>
+            <time class="text-sm text-gray-600 dark:text-gray-400 mb-3 block">
+              {post.data.pubDate.toLocaleDateString('en-us', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            {post.data.categories && post.data.categories.length > 0 && (
+              <div class="flex gap-2 mb-3">
+                {post.data.categories.map((category) => (
+                  <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded text-xs">
+                    {category}
+                  </span>
+                ))}
+              </div>
+            )}
+            <p class="text-gray-700 dark:text-gray-300">{post.data.description}</p>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

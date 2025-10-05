@@ -1,0 +1,27 @@
+{
+  "name": "aaronmichaelroy-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.6",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.14.1",
+    "axios": "^1.12.2",
+    "cheerio": "^1.1.2",
+    "jsdom": "^27.0.0",
+    "turndown": "^7.2.1",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^3.4.18"
+  }
+}
