@@ -1,6 +1,6 @@
 ---
 title: "Vibe coding a Tour de France app using Replit and Google Sheets"
-description: "This past week, while watching the last stages of the Tour de France, I vibe coded (vibe coding = [instructing instructing AI agents to write code](https://blog"
+description: "I built a TDF fantasy competition UI using Replit and Google Sheets. This post breaks down my process, lessons learned, and how I made tracking my team more fun"
 pubDate: 2025-07-30
 categories: ["Thoughts and opinions"]
 ---

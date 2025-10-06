@@ -14,7 +14,8 @@ const siteDescription = 'Product manager, writer, and tech enthusiast';
 const fullTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 const metaDescription = description || siteDescription;
 const currentURL = canonicalURL || new URL(Astro.url.pathname, Astro.site).toString();
-const defaultOGImage = new URL('/og-image.png', Astro.site).toString();
+// Remove OG image reference until image is created
+const defaultOGImage = ogImage || null;
 ---
 
 <!DOCTYPE html>
@@ -36,14 +37,14 @@ const defaultOGImage = new URL('/og-image.png', Astro.site).toString();
     <meta property="og:url" content={currentURL} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={metaDescription} />
-    <meta property="og:image" content={ogImage || defaultOGImage} />
+    {defaultOGImage && <meta property="og:image" content={defaultOGImage} />}
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={currentURL} />
     <meta property="twitter:title" content={fullTitle} />
     <meta property="twitter:description" content={metaDescription} />
-    <meta property="twitter:image" content={ogImage || defaultOGImage} />
+    {defaultOGImage && <meta property="twitter:image" content={defaultOGImage} />}
   </head>
   <body class="min-h-screen bg-white text-gray-900 antialiased">
     <header class="border-b border-gray-200">

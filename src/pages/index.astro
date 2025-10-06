@@ -1,41 +1,39 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { highlights } from '../data/highlights';
 
-const allPosts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const allPosts = await getCollection('blog');
 
-const recentPosts = allPosts.slice(0, 10);
+// Get highlighted posts in the order specified in highlights.ts
+const highlightedPosts = highlights
+  .map(slug => allPosts.find(post => post.slug === slug))
+  .filter(post => post !== undefined);
 ---
 
-<BaseLayout title="Aaron Michael Roy">
+<BaseLayout
+  title="Aaron Michael Roy"
+  description="Product manager based in Brooklyn. Writing about product, growth, and bikes."
+>
   <div class="max-w-3xl mx-auto px-6 py-16">
     <!-- Intro Section -->
     <section class="mb-20">
       <h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-        Hi, I'm Aaron.
+        Hi there, I'm Aaron Roy 👋
       </h1>
-      <p class="text-xl text-gray-600 leading-relaxed mb-6">
-        I'm a product manager based in the Bay Area. I write about product management,
-        startups, and technology.
-      </p>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        Currently building products and sharing what I learn along the way.
-      </p>
     </section>
 
-    <!-- Recent Posts Section -->
+    <!-- Highlights Section -->
     <section>
       <div class="flex items-center justify-between mb-8">
-        <h2 class="text-2xl font-semibold">Recent Writing</h2>
+        <h2 class="text-2xl font-semibold">Highlights</h2>
         <a href="/writing" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">
           View all →
         </a>
       </div>
 
       <div class="space-y-10">
-        {recentPosts.map((post) => (
+        {highlightedPosts.map((post) => (
           <article class="group">
             <a href={`/${post.slug}`} class="block">
               <h3 class="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">

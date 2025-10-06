@@ -1,6 +1,6 @@
 ---
 title: "How brands are adapting marketing outreach tactics during Covid"
-description: "I recently had the chance to chat with [Loyalty360](https://loyalty360.org/content-gallery/multimedia/loyalty360-thought-leadership-series-aaron-roy,-wa) on how"
+description: "Discussing how marketers are adjusting outreach tactics for Q3 and Q4 2020 with the Loyalty 360 team."
 pubDate: 2020-05-03
 categories: ["Entrepreneurship"]
 ---

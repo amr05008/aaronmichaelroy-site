@@ -1,6 +1,6 @@
 ---
 title: "How to manage students, 3D printers, and data at scale"
-description: "![Aaron Roy - Speaking at Construct3D](/images/how-to-manage-students-3d-printers-and-data-at-scale-1759632215379.jpeg)  I had the chance to give a talk on \"[Ho"
+description: "Presentation on how educators and engineers could manage students, 3D printers and data at scale."
 pubDate: 2018-10-13
 categories: ["Product Management", "Selected Work"]
 ---

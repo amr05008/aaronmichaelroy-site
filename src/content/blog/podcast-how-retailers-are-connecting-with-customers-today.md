@@ -1,6 +1,6 @@
 ---
 title: "Podcast: How retailers are connecting with customers today"
-description: "It was a pleasure chatting with the [Retail Focus podcast](http://www.retailfocuspodcast.com/podcasts/2018/7/14/retail-focus-71318-walmart-tests-c-store-waters-"
+description: "Joining the Retail Focus podcast to discuss how handwritten notes stand out from the digital noise"
 pubDate: 2018-07-31
 categories: ["Entrepreneurship"]
 ---

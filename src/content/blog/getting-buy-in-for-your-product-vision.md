@@ -1,6 +1,6 @@
 ---
 title: "Getting buy-in for your product vision"
-description: "This is an example of a presentation I used to get cross-functional team members and executive leadership bought into a product vision and launch plan while at "
+description: "Example presentation used for getting buy-in for product vision and direction with cross-functional team members and leadership."
 pubDate: 2018-01-06
 categories: ["Product Management", "Selected Work"]
 ---

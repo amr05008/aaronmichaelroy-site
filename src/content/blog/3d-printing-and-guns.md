@@ -1,6 +1,6 @@
 ---
 title: "3D Printing and Guns"
-description: "A few quick thoughts on 3D Printed (3DP) guns, now that Defense Distributed is on the precipice of being able to distribute gun designs on their site, although "
+description: "A few thoughts on 3D Printed guns, now that Defense Distributed is on the precipice of being able to distribute gun designs."
 pubDate: 2018-09-01
 categories: ["Thoughts and opinions"]
 ---

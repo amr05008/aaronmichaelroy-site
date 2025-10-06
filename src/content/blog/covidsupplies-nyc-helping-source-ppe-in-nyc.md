@@ -1,6 +1,6 @@
 ---
 title: "Covidsupplies.NYC - Helping source PPE in NYC"
-description: "https://www.loom.com/share/934dec15558d42a6aa558a8d0fba1f3e  These past few months have been incredibly strange. In early January / February, we started to hear"
+description: "How we combined our powers in product, 3D printing, marketing and figuring stuff out to source and distribute PPE in NYC."
 pubDate: 2020-05-04
 categories: ["Entrepreneurship", "Selected Work"]
 ---

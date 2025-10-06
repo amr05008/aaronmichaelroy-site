@@ -1,6 +1,6 @@
 ---
 title: "The Twisting Tale of Our Handwriting Robots "
-description: "In a loft next to [Roberta’s Pizza](https://www.robertaspizza.com/bushwick) in Brooklyn reside a fleet of Handwriting robots, sitting idle until the next time t"
+description: "The story of how hundreds of handwriting robots ended up in a studio in Bushwick."
 pubDate: 2024-08-29
 categories: ["Thoughts and opinions"]
 ---

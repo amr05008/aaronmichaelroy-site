@@ -1,6 +1,6 @@
 ---
 title: "Lessons learned refinancing $100k+ student loan debt multiple times"
-description: "I see all sorts of advice on the internet about refinancing student loans, but very few stories about folks who've refinanced multiple times and the benefits of"
+description: "Sharing my experienece refinancing my student loan debt multiple times"
 pubDate: 2022-05-27
 categories: ["Thoughts and opinions"]
 ---

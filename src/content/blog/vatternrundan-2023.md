@@ -1,6 +1,6 @@
 ---
 title: "A long day on the bike - Vätternrundan 2023"
-description: "![](/images/vatternrundan-2023-1759632216130.jpeg)  I had the honor of participating in [Vätternrundan](https://vatternrundan.se/vatternrundan/en/) this past Ju"
+description: "Vätternrundan is one of the largest recreational cycling events in the world. This is my experience riding ~197 miles in Vätternrundan 2023."
 pubDate: 2023-08-14
 categories: ["Thoughts and opinions"]
 ---

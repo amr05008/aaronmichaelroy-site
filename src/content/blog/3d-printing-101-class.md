@@ -1,6 +1,6 @@
 ---
 title: "3D Printing 101"
-description: "_**\"What would you make if you had a machine that could make almost anything?\"**_  This question was how I started many of the \"3D Printing 101\" classes I held "
+description: "Recording from 3D Printing 101 - \"Intro to 3D Printing\" class I taught in 2015."
 pubDate: 2015-09-05
 categories: ["Product Management", "Selected Work"]
 ---

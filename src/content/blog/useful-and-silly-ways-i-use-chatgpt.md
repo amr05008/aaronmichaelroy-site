@@ -1,6 +1,6 @@
 ---
 title: "Useful (and silly) ways I use ChatGPT"
-description: "I find myself using [ChatGPT](https://openai.com/) more and more within a given week. I primarily use their Mac and iOS apps to access the application (vs withi"
+description: "Some useful and silly ways I've used ChatGPT in my day to day life."
 pubDate: 2024-05-28
 categories: ["Thoughts and opinions"]
 ---

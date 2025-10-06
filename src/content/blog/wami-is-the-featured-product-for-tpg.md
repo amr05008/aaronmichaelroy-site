@@ -1,6 +1,6 @@
 ---
 title: "Wami is the featured product for TPG!"
-description: "![Aaron Roy - Product Manager](/images/wami-is-the-featured-product-for-tpg-1759632215298.jpeg) It was an absolute blast serving as the [featured product of the"
+description: "Speaking about our startup, Wami, at the Product Group NYC"
 pubDate: 2020-01-04
 categories: ["Product Management", "Selected Work"]
 ---

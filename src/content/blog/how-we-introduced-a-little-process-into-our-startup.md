@@ -1,6 +1,6 @@
 ---
 title: "How we introduced a little process into our startup"
-description: "While I love startup style -- build what needs to be done, cross items off a whiteboard or spreadsheet software development -- there comes a time in every compa"
+description: "Sometimes you need to add a bit of process to keep the teams rowing in the right direction."
 pubDate: 2018-11-17
 categories: ["Product Management", "Selected Work"]
 ---

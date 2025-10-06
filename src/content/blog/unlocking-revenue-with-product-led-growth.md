@@ -1,6 +1,6 @@
 ---
 title: "Unlocking revenue with product-led growth"
-description: "![](/images/unlocking-revenue-with-product-led-growth-1759632215420.jpg)  One of our handwriting robots  I joined [Bond](https://www.linkedin.com/company/bond-i"
+description: "Lessons learned experimenting with product-led growth (PLG) strategies to unlock self-service revenue growth."
 pubDate: 2020-05-01
 categories: ["Product Management", "Selected Work"]
 ---

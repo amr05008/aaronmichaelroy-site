@@ -1,6 +1,6 @@
 ---
 title: "Taking aim at helping creators drive more revenue"
-description: "In 2020, I put my startup, Wami, [into survival mode](https://aaronmichaelroy.com/how-i-got-a-product-job-during-the-pandemic/) and joined Teachable as the prod"
+description: "What we did, how we did it and lessons learned from trying to help creators drive more revenue with Teachable Discover and Spotlight."
 pubDate: 2022-05-06
 categories: ["Thoughts and opinions"]
 ---

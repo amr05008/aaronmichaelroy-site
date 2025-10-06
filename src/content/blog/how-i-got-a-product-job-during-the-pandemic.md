@@ -1,6 +1,6 @@
 ---
 title: "How I got a product role to save my startup"
-description: "I’ve recently joined the rocketship that is [Teachable](https://teachable.com/) as a product manager for their burgeoning [Discover platform](https://discover.t"
+description: "Resources, templates and articles that helped a product job search in the midst of the Covid-19 pandemic."
 pubDate: 2021-02-06
 categories: ["Product Management", "Thoughts and opinions"]
 ---

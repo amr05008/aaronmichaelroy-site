@@ -1,6 +1,6 @@
 ---
 title: "In appreciation of the internet"
-description: "What a time to be alive!  We're in the early stages of a global pandemic with covid-19.  The stock markets are searching for a bottom amidst skyrocketing infect"
+description: "Some thoughts early in the Pandemic"
 pubDate: 2020-03-17
 categories: ["Thoughts and opinions"]
 ---

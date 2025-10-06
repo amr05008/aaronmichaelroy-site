@@ -1,6 +1,6 @@
 ---
 title: "Example embedded checkout"
-description: "![How dogs can find more treats](https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/x5P4saVzQgOhZpLi1G"
+description: "Example embedded checkout for Teachable"
 pubDate: 2024-08-28
 categories: ["Thoughts and opinions"]
 ---

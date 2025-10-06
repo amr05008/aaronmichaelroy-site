@@ -1,6 +1,6 @@
 ---
 title: "How to set up two-factor verification on Yahoo"
-description: "While researching [ways to improve security and privacy](https://aaronmichaelroy.com/how-to-stay-ahead-of-online-scammers/) online, I noticed I couldn't easily "
+description: "Trying to set up a second method of verification on Yahoo? Use this step by step guide with screenshots."
 pubDate: 2024-06-25
 categories: ["Thoughts and opinions"]
 ---
