@@ -74,25 +74,30 @@ This script will:
 ```
 /
 ├── public/               # Static assets
-│   └── images/          # Blog post images
+│   ├── images/          # Blog post images (54+ images)
+│   ├── favicon.svg      # Custom branded favicon
+│   └── robots.txt       # Search engine directives
 ├── scripts/
-│   └── migrate-wordpress.js  # Migration script
+│   ├── migrate-wordpress.js        # WordPress XML to Markdown migration
+│   └── update-yoast-descriptions.js # Extract Yoast SEO descriptions
 ├── src/
 │   ├── content/
-│   │   ├── blog/        # Blog posts (markdown/mdx)
-│   │   └── config.ts    # Content collections config
+│   │   ├── blog/        # Blog posts (29 markdown files)
+│   │   └── config.ts    # Content collections schema
+│   ├── data/
+│   │   └── highlights.ts # Homepage featured posts configuration
 │   ├── layouts/
-│   │   ├── BaseLayout.astro   # Base HTML structure
-│   │   └── BlogPost.astro     # Blog post template
+│   │   ├── BaseLayout.astro   # Base HTML, SEO, Open Graph
+│   │   └── BlogPost.astro     # Blog template with JSON-LD
 │   ├── pages/
-│   │   ├── index.astro        # Homepage
+│   │   ├── index.astro        # Homepage with Highlights
 │   │   ├── about.astro        # About page
-│   │   └── blog/
-│   │       ├── index.astro    # Blog listing
-│   │       └── [...slug].astro # Individual posts
+│   │   ├── writing.astro      # Blog archive
+│   │   └── [...slug].astro    # Dynamic blog post routes
 │   └── styles/
 │       └── global.css         # Tailwind imports
-├── astro.config.mjs     # Astro configuration
+├── astro.config.mjs     # Astro config (site URL, integrations)
+├── CLAUDE.md           # Project documentation for AI assistance
 └── package.json
 ```
 
@@ -148,65 +153,62 @@ updatedDate: 2025-01-20
 
 URLs are automatically generated from the markdown filename/slug to preserve WordPress URLs.
 
-## Migration TODO List
+## SEO Features
 
-### ✅ Completed
-- [x] Create Astro project structure
-- [x] Install dependencies (Astro, MDX, Tailwind, sitemap)
-- [x] Migrate 29 WordPress posts to Markdown
-- [x] Download and organize 54 images
-- [x] Build clean, readable blog design
-- [x] Create homepage with intro and recent posts
-- [x] Create writing archive page (grouped by year)
-- [x] Build blog post template with reading time
-- [x] Add SEO meta tags (OG, Twitter Cards, canonical URLs)
-- [x] Add structured data (JSON-LD for blog posts)
-- [x] Configure URL structure to match WordPress
-- [x] Remove XML file and secure repo
+- **Meta descriptions**: All 29 posts have handcrafted SEO descriptions
+- **Canonical URLs**: Match WordPress structure (`/{slug}`) for SEO preservation
+- **Open Graph & Twitter Cards**: Complete social sharing metadata
+- **Structured data**: JSON-LD BlogPosting schema on all posts
+- **Sitemap**: Auto-generated at `/sitemap-index.xml` via @astrojs/sitemap
+- **robots.txt**: Configured with sitemap reference
+- **Custom favicon**: Branded icon in `public/favicon.svg`
 
-### 🔲 Remaining Tasks
+## Homepage Highlights
 
-#### Content Review
-- [ ] Review all 29 migrated blog posts for formatting issues
-- [ ] Verify all images are displaying correctly
-- [ ] Check for any broken internal links
-- [ ] Update About page with actual bio content
-- [ ] Add social media links (verify Twitter/LinkedIn URLs)
+The homepage features a curated "Highlights" section instead of recent posts. To update:
 
-#### Design & UX
-- [ ] Test site on mobile devices (phone, tablet)
-- [ ] Create favicon (replace default `/public/favicon.svg`)
-- [ ] Create Open Graph image (`/public/og-image.png`)
-- [ ] Consider adding dark mode toggle (optional)
-- [ ] Add syntax highlighting theme customization (if needed)
+1. Edit `src/data/highlights.ts`
+2. Update the array of post slugs in your preferred order
+3. Changes hot-reload automatically in dev mode
 
-#### SEO & Performance
-- [ ] Test all old WordPress URLs redirect properly
-- [ ] Submit sitemap to Google Search Console
-- [ ] Add Google Analytics or privacy-friendly alternative
-- [ ] Optimize images (use WebP format, compression)
-- [ ] Test page speed with Lighthouse
+## Deployment Status
 
-#### Pre-Launch
-- [ ] Verify RSS feed is working (if needed, add @astrojs/rss)
-- [ ] Test site in production build (`npm run build && npm run preview`)
-- [ ] Set up 301 redirects from WordPress to Astro (if different domain)
-- [ ] Create vercel.json config for any special redirects
+### ✅ Completed (75% Ready)
+- [x] All 29 WordPress posts migrated to Markdown
+- [x] 54+ images migrated to `public/images/`
+- [x] URL structure matches WordPress exactly (`/{slug}`)
+- [x] SEO descriptions on all 29 posts (100% coverage)
+- [x] Custom branded favicon installed
+- [x] Sitemap and robots.txt configured
+- [x] About page with bio and contact links
+- [x] Production build tested (32 pages, 1.14s build time)
+- [x] Highlights feature for homepage curation
 
-#### Deployment
-- [ ] Push code to GitHub
-- [ ] Connect GitHub repo to Vercel
-- [ ] Configure custom domain (aaronmichaelroy.com)
-- [ ] Update DNS records
-- [ ] Verify SSL certificate
-- [ ] Test production site thoroughly
-- [ ] Update WordPress to redirect to new site (or shut down)
+### 🔲 Critical Pre-Launch Tasks
 
-#### Post-Launch
-- [ ] Monitor for 404 errors
-- [ ] Set up error tracking (Sentry, etc.)
-- [ ] Announce migration on social media
-- [ ] Update any external links pointing to old WordPress URLs
+Before pointing DNS to Vercel:
+
+1. **Create custom 404 page** (`src/pages/404.astro`)
+2. **Install analytics** (Google Analytics, Plausible, or Fathom)
+3. **Test all 29 blog URLs** in production preview environment
+4. **Mobile testing** on actual devices (phone, tablet)
+
+### 🚀 Deployment Steps
+
+5. Deploy to Vercel staging environment
+6. Configure custom domain (`aaronmichaelroy.com`) in Vercel
+7. Update DNS records to point to Vercel
+8. Verify SSL certificate provisioning
+9. Monitor first 24-48 hours for 404s and issues
+
+### 📈 Post-Launch Optimization
+
+10. Submit sitemap to Google Search Console
+11. Create default OG image for social sharing (`/public/og-image.png`)
+12. Run Lighthouse audit for performance baseline
+13. Consider adding RSS feed with `@astrojs/rss`
+14. Image optimization (WebP format, compression)
+15. Set up error tracking (Sentry or similar)
 
 ## License
 
