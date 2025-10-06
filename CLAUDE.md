@@ -95,7 +95,7 @@ This script extracts `_yoast_wpseo_metadesc` values from WordPress postmeta and 
 
 The site includes comprehensive SEO features:
 
-- **Meta descriptions**: 23/29 posts use hand-crafted Yoast SEO descriptions; 6 posts use auto-generated excerpts
+- **Meta descriptions**: 29 posts used handcrafted SEO descriptions
 - **Canonical URLs**: Set on all pages to match WordPress URL structure (/{slug})
 - **Open Graph tags**: Complete OG and Twitter Card metadata in BaseLayout
 - **Structured data**: JSON-LD BlogPosting schema on all blog posts
