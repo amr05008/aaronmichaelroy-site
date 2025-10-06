@@ -35,7 +35,7 @@ The first thing I did was put together a list of verticals and companies that fi
 
 Some of the companies I was interested in
 
-Once I was ready to start actively searching for a role, I invested some time cleaning up my [portfolio](https://aaronmichaelroy.com/category/portfolio/) and resume.
+Once I was ready to start actively searching for a role, I invested some time cleaning up my [portfolio](https://aaronroy.com/category/portfolio/) and resume.
 
 With interviews being conducted over Zoom, I knew that not all facets of my personality or past work would come out during the interview process. I used the problem, approach, outcome framework to unpack the strategy behind some of the products I’ve been a part of building as my portfolio case studies. I then solicited feedback from some of my friends and peers in the product space to make sure I wasn’t sharing gibberish.
 

@@ -7,7 +7,7 @@ categories: ["Thoughts and opinions"]
 
 In a loft next to [Roberta’s Pizza](https://www.robertaspizza.com/bushwick) in Brooklyn reside a fleet of Handwriting robots, sitting idle until the next time they are called into action. 
 
-I came to meet these robots (and my [Wami](https://wami.io/) co-founders) while working at Bond. I joined Bond right after they were acquired by [Newell Brands](https://www.newellbrands.com/) (the owners of Rubbermaid, Sharpie, Yankee Candle, among other brands) for a rumored $20 million in 2016, and over a few years, [we built up a handwritten note](https://aaronmichaelroy.com/unlocking-revenue-with-product-led-growth/) business working under the Newell umbrella. 
+I came to meet these robots (and my [Wami](https://wami.io/) co-founders) while working at Bond. I joined Bond right after they were acquired by [Newell Brands](https://www.newellbrands.com/) (the owners of Rubbermaid, Sharpie, Yankee Candle, among other brands) for a rumored $20 million in 2016, and over a few years, [we built up a handwritten note](https://aaronroy.com/unlocking-revenue-with-product-led-growth/) business working under the Newell umbrella. 
 
 Alas, in late 2018, Newell decided they were going to close Bond and divest from their assets. This decision by Newell set the stage for us to purchase and relaunch these robots with Wami. 
 
@@ -61,7 +61,7 @@ Beyond potentially expensive litigation against a much deeper-pocketed adversary
 
 ## **Brooklyn or bust** 
 
-Now that we had been forced to vacate the Josten’s plant twice, we decided it was time to restructure Wami in a way that gave it a much better chance at survival. We enhanced our Brooklyn production studio with more robots and [got other jobs](https://aaronmichaelroy.com/how-i-got-a-product-job-during-the-pandemic/) to reduce our cash flow. 
+Now that we had been forced to vacate the Josten’s plant twice, we decided it was time to restructure Wami in a way that gave it a much better chance at survival. We enhanced our Brooklyn production studio with more robots and [got other jobs](https://aaronroy.com/how-i-got-a-product-job-during-the-pandemic/) to reduce our cash flow. 
 
 We invested in building automation to manage many facets of our business, and now Wami is set up as a usually profitable, mostly seasonal business, primarily helping luxury brands from fashion houses such as Kering, Richemont, and LVMH send out customer loyalty notes at scale. 
 

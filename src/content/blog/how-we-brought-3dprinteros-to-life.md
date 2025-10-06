@@ -35,7 +35,7 @@ During this process, I built wireframes (example below) and prototypes to test t
 
 Wireframe example
 
-We launched a free beta version of the product in March 2015, and all focus shifted to feedback gathering, [evangelizing the platform](https://aaronmichaelroy.com/video-discussing-3d-printing-operating-systems/), and improving the feature set. I served as the primary tester of the platform with our beta users and established a [robust forum](https://forum.3dprinteros.com/https://forum.3dprinteros.com/t/how-to-set-up-raspberry-pi-wifi-walkthrough/300) for sharing walkthroughs and soliciting community bug reporting.
+We launched a free beta version of the product in March 2015, and all focus shifted to feedback gathering, [evangelizing the platform](https://aaronroy.com/video-discussing-3d-printing-operating-systems/), and improving the feature set. I served as the primary tester of the platform with our beta users and established a [robust forum](https://forum.3dprinteros.com/https://forum.3dprinteros.com/t/how-to-set-up-raspberry-pi-wifi-walkthrough/300) for sharing walkthroughs and soliciting community bug reporting.
 
 I created feedback surveys and incentives (free t-shirts, early access to future new features, 3D printer filament giveaways) for users to test the beta release. I went on-site to multiple companies and educational institutions to give hands-on support and observe how they used the platform. I also used Intercom to communicate in-app with users and deliver A/B tests of email sequences and walkthroughs to improve user engagement and identify leads for potential monetization.
 

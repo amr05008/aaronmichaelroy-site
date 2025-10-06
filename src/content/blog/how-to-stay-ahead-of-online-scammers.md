@@ -38,7 +38,7 @@ Enabling 2FA on your accounts in the digital world gives you similar protection 
 Here are a few resources on how to set up 2FA for popular accounts:
 
 -   [Google](https://support.google.com/accounts/answer/185839?hl=en&co=GENIE.Platform%3DDesktop) (Gmail, Youtube) 
--   [Yahoo mail](https://aaronmichaelroy.com/how-to-set-up-two-factor-verification-on-yahoo/) 
+-   [Yahoo mail](https://aaronroy.com/how-to-set-up-two-factor-verification-on-yahoo/) 
 -   [Sofi Bank](https://support.sofi.com/hc/en-us/articles/9274826655757-How-do-I-update-the-Two-Factor-Authentication-2FA-method-on-my-account)
 -   [Microsoft](https://support.microsoft.com/en-us/account-billing/how-to-use-two-step-verification-with-your-microsoft-account-c7910146-672f-01e9-50a0-93b4585e7eb4) (MS Office, Hotmail) 
 -   [Meta](https://www.facebook.com/help/148233965247823) (Instagram, Facebook, WhatsApp) 

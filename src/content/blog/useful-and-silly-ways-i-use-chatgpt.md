@@ -9,12 +9,12 @@ I find myself using [ChatGPT](https://openai.com/) more and more within a given 
 
 ## **Getting personalized support for specific technology questions**
 
-I recently acquired [aaronroy.com](http://aaronroy.com) and [aaronroy.net](http://aaronroy.net), so after years of using [aaronmichaelroy.com](http://aaronmichaelroy.com) as my primary domain, I was considering moving my content to a new TLD. Before going down the rabbit hole of what that project would entail, I was able to use ChatGPT to see what the project would look like and ask specific follow-up questions as I debated what direction I wanted to take.
+I recently acquired [aaronroy.com](http://aaronroy.com) and [aaronroy.net](http://aaronroy.net), so after years of using [aaronroy.com](http://aaronroy.com) as my primary domain, I was considering moving my content to a new TLD. Before going down the rabbit hole of what that project would entail, I was able to use ChatGPT to see what the project would look like and ask specific follow-up questions as I debated what direction I wanted to take.
 
 My starting prompt:
 
 ```
-I want to switch my website from aaronmichaelroy.com to aaronroy.com. I own both the domains already and have hosting already set up on aaronmichaelroy.com. What steps should I take to switch my website to aaronroy.com?
+I want to switch my website from aaronroy.com to aaronroy.com. I own both the domains already and have hosting already set up on aaronroy.com. What steps should I take to switch my website to aaronroy.com?
 ```
 
 I appreciate that it starts the response with "Backup Your Website".

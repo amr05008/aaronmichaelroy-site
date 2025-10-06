@@ -87,7 +87,7 @@ This script extracts `_yoast_wpseo_metadesc` values from WordPress postmeta and 
 
 ## Configuration
 
-- **Site URL**: Set in `astro.config.mjs` as `site: 'https://aaronmichaelroy.com'`
+- **Site URL**: Set in `astro.config.mjs` as `site: 'https://aaronroy.com'`
 - **Syntax highlighting**: Uses `github-dark` theme (configured in `astro.config.mjs`)
 - **Integrations**: MDX, Sitemap, Tailwind CSS
 
@@ -117,7 +117,7 @@ Optimized for Vercel:
 - Output directory: `dist`
 - Astro auto-detected by Vercel
 
-SSL and DNS configured for custom domain (aaronmichaelroy.com).
+SSL and DNS configured for custom domain (aaronroy.com).
 
 ## Session History
 
@@ -142,7 +142,7 @@ SSL and DNS configured for custom domain (aaronmichaelroy.com).
 - **Git credentials**: Push failed due to missing git credentials - requires manual `git push origin main`
 - **Todo list staleness**: Initial todo included already-completed items (favicon, SEO), required cleanup
 
-**Updated launch checklist for aaronmichaelroy.com:**
+**Updated launch checklist for aaronroy.com:**
 
 **🚨 BLOCKERS (Must complete before DNS cutover):**
 1. **Create custom 404 page** - Effort: 20 min - Priority: HIGH
@@ -240,7 +240,7 @@ SSL and DNS configured for custom domain (aaronmichaelroy.com).
 
 **Deployment steps:**
 5. Deploy to Vercel staging environment
-6. Configure custom domain (aaronmichaelroy.com) in Vercel
+6. Configure custom domain (aaronroy.com) in Vercel
 7. Update DNS records to point to Vercel
 8. Verify SSL certificate provisioning
 9. Monitor first 24-48 hours for 404s and issues

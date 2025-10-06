@@ -5,7 +5,7 @@ pubDate: 2022-05-06
 categories: ["Thoughts and opinions"]
 ---
 
-In 2020, I put my startup, Wami, [into survival mode](https://aaronmichaelroy.com/how-i-got-a-product-job-during-the-pandemic/) and joined Teachable as the product lead for a new Skunkworks team. Our ambitious goal was to figure out ways to help creators generate additional revenue.
+In 2020, I put my startup, Wami, [into survival mode](https://aaronroy.com/how-i-got-a-product-job-during-the-pandemic/) and joined Teachable as the product lead for a new Skunkworks team. Our ambitious goal was to figure out ways to help creators generate additional revenue.
 
 We started with the following areas as potential problems to solve: 
 

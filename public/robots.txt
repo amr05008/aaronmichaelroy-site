@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aaronmichaelroy.com/sitemap-index.xml
+Sitemap: https://aaronroy.com/sitemap-index.xml

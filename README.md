@@ -196,7 +196,7 @@ Before pointing DNS to Vercel:
 ### 🚀 Deployment Steps
 
 5. Deploy to Vercel staging environment
-6. Configure custom domain (`aaronmichaelroy.com`) in Vercel
+6. Configure custom domain (`aaronroy.com`) in Vercel
 7. Update DNS records to point to Vercel
 8. Verify SSL certificate provisioning
 9. Monitor first 24-48 hours for 404s and issues
