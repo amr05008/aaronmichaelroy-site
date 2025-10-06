@@ -157,52 +157,94 @@ SSL and DNS configured for custom domain (aaronroy.com).
 - **Analytics**: Enabled in Vercel dashboard, ready to track once DNS propagates
 - **DNS**: Configured at domain registrar, awaiting propagation (1-48 hours)
 
+### 2025-10-06 (Later): Domain Migration & 301 Redirects - SEO Preservation
+
+**What we built/modified:**
+- Configured 301 redirects from aaronmichaelroy.com → aaronroy.com using WordPress Redirection plugin
+- Set up regex-based catch-all redirect pattern to preserve all URL paths
+- Submitted Google Search Console Change of Address from old domain to new domain
+- Verified redirect functionality across homepage, about page, writing archive, and blog posts
+
+**Technical decisions:**
+- **Redirect method**: Chose WordPress Redirection plugin over .htaccess for easier management and visibility in WordPress admin
+- **Redirect pattern**: Used regex pattern `^(.*)$` with target `https://aaronroy.com$1` to preserve exact URL paths
+- **Redirect type**: 301 Permanent redirect (critical for SEO) to signal permanent move to search engines
+- **Domain retention strategy**: Keep aaronmichaelroy.com active with redirects through 2029 (domain expiration) to catch long-tail traffic and old backlinks
+- **GSC timing**: Submitted Change of Address immediately after redirect configuration to expedite ranking signal transfer
+
+**Issues encountered:**
+- **Plugin UI confusion**: Initial configuration showed validation errors for regex syntax until "Regex" checkbox was enabled
+- **Target URL format**: Needed to remove slash before `$1` variable (`https://aaronroy.com$1` not `https://aaronroy.com/$1`) to avoid double-slash issues
+
+**Verification completed:**
+- ✅ Redirects tested and working correctly:
+  - `aaronmichaelroy.com` → `aaronroy.com`
+  - `aaronmichaelroy.com/about` → `aaronroy.com/about`
+  - `aaronmichaelroy.com/writing` → `aaronroy.com/writing`
+  - Blog post URLs preserve exact paths
+- ✅ Google Search Console Change of Address submitted (processing started October 6, 2025)
+- ✅ Both HTTP and HTTPS variants redirect correctly
+- ✅ 301 status code confirmed (not 302 temporary redirect)
+
+**SEO migration status:**
+- **Old domain**: aaronmichaelroy.com (owned through 2029, hosted on GoDaddy)
+- **New domain**: aaronroy.com (live on Vercel with SSL)
+- **Redirect strategy**: Permanent 301 redirects preserving all URL paths
+- **Google notification**: Change of Address submitted in Search Console
+- **Expected timeline**: 
+  - Week 1-2: Google verifies redirects, begins processing
+  - Week 2-4: Search results gradually switch to new domain
+  - Month 2-6: Rankings stabilize on new domain, old traffic drops to near-zero
+
 **Updated launch checklist:**
 
-**🎉 COMPLETED:**
-1. ✅ Custom 404 page created and deployed
-2. ✅ Vercel Analytics installed and enabled
-3. ✅ URL validation testing - all 29 blog posts verified with correct URLs
-4. ✅ Deployed to Vercel production
-5. ✅ Custom domains added in Vercel
-6. ✅ DNS records configured (awaiting propagation)
-7. ✅ SSL certificates provisioning
+**✅✅✅ CRITICAL ITEMS COMPLETED:**
+1. ✅ Site migrated to Astro and deployed to Vercel
+2. ✅ All 29 blog posts migrated with SEO descriptions
+3. ✅ Custom 404 page created and deployed
+4. ✅ Vercel Analytics installed and enabled
+5. ✅ 301 redirects from old domain configured and tested
+6. ✅ Google Search Console Change of Address submitted
+7. ✅ DNS cutover complete (aaronroy.com live)
+8. ✅ SSL certificates provisioned for both apex and www
 
-**⏳ IN PROGRESS:**
-1. **DNS propagation** - Waiting for DNS to resolve (1-48 hours, typically 15 minutes)
-2. **SSL certificate generation** - Vercel provisioning certificates for both domains
-
-**🚨 REMAINING BLOCKERS (Before announcing launch):**
+**🚀 HIGH-PRIORITY REMAINING TASKS:**
 1. **Mobile responsive testing** - Effort: 20 min - Priority: HIGH
-   - Test https://aaronroy.com on iPhone (Safari)
+   - Test on iPhone (Safari)
    - Test on Android (Chrome)
-   - Verify navigation, images, and typography render correctly on mobile devices
+   - Verify navigation, images, typography, and touch targets
+   - Ensure writing archive is usable on small screens
 
-**Total remaining blocker effort: 20 minutes**
+2. **Update external profile links** - Effort: 30 min - Priority: HIGH
+   - [ ] LinkedIn profile URL (highest professional traffic)
+   - [ ] Twitter/X bio website link
+   - [ ] Email signature
+   - [ ] GitHub profile website field
+   - [ ] Resume/CV (update PDF with new URL)
+   - [ ] Other profiles (Medium, Dev.to, etc.)
+
+**Total high-priority effort: ~55 minutes**
 
 **🎨 NICE-TO-HAVES (Post-launch optimization):**
-1. Submit sitemap to Google Search Console - Effort: 10 min
-2. Create default OG image (1200x630px) - Effort: 30 min
-3. Run Lighthouse audit for performance baseline - Effort: 15 min
-4. Add RSS feed with @astrojs/rss - Effort: 45 min
-5. Image optimization (WebP conversion) - Effort: 60 min
-6. Set up error tracking (Sentry) - Effort: 30 min
+4. Run Lighthouse audit for performance baseline - Effort: 15 min
+5. Create default OG image (1200x630px) for better social sharing - Effort: 30 min
+6. Add RSS feed with @astrojs/rss - Effort: 45 min
+7. Image optimization (WebP conversion) - Effort: 60 min
+8. Set up error tracking (Sentry) - Effort: 30 min
+9. Submit to Bing Webmaster Tools - Effort: 15 min
 
-**Priority order for next session:**
-1. Wait for DNS propagation and SSL certificate completion
-2. Mobile responsive testing on real devices
-3. Monitor analytics for first 24-48 hours
-4. Submit sitemap to Google Search Console
-5. Run Lighthouse audit
+**📊 Monitoring plan:**
+- **Week 1-2**: Check Google Search Console daily for crawl errors
+- **Month 1-3**: Monitor traffic shift from old to new domain in GSC
+- **Month 6+**: Verify old domain traffic drops to near-zero (keep redirects active permanently)
 
 **Outcomes:**
-- Site is 95% live - only waiting on DNS propagation
-- All critical pre-launch tasks completed (404, analytics, deployment, DNS)
-- Preview URL fully functional and tested
-- Custom domains configured with SSL certificates provisioning
-- Analytics ready to track traffic once DNS resolves
-- Only remaining blocker is mobile testing before public announcement
-- **SITE READY FOR LAUNCH** once SSL certificates complete
+- **SITE IS FULLY LIVE** on aaronroy.com with complete SEO preservation
+- All critical migration tasks completed: new site deployed, redirects configured, Google notified
+- Old domain (aaronmichaelroy.com) will continue redirecting permanently to preserve SEO value from backlinks
+- Domain migration following best practices: 301 redirects + GSC Change of Address
+- Only remaining tasks are polish items (mobile testing, profile updates, performance optimization)
+- **Migration complete and production-ready** 🎉
 
 ### 2025-10-05: Documentation Sync & Launch Readiness Review
 
