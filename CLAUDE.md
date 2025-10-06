@@ -121,6 +121,89 @@ SSL and DNS configured for custom domain (aaronroy.com).
 
 ## Session History
 
+### 2025-10-06: Production Deployment - 404 Page, Analytics & DNS Cutover
+
+**What we built/modified:**
+- Created custom branded 404 error page at `src/pages/404.astro`
+- Installed and integrated Vercel Analytics (`@vercel/analytics`)
+- Verified domain change from aaronmichaelroy.com to aaronroy.com in production build
+- Deployed to Vercel with auto-detected Astro configuration
+- Connected custom domains (aaronroy.com and www.aaronroy.com) in Vercel
+- Enabled Vercel Web Analytics in dashboard
+
+**Technical decisions:**
+- **404 page design**: Created minimal, branded error page with CTAs to /writing and homepage, using consistent Tailwind styling from existing pages
+- **Analytics choice**: Chose Vercel Analytics over Google Analytics for privacy-friendly tracking (no cookie consent needed), seamless Vercel integration, and built-in Core Web Vitals monitoring
+- **Analytics implementation**: Used official `@vercel/analytics/astro` component in BaseLayout for site-wide tracking without additional configuration
+- **Domain setup**: Added both apex domain (aaronroy.com) and www subdomain with automatic SSL certificate provisioning
+- **Meta tags**: Set 404 page title as "Page Not Found | Aaron Roy" (not "Aaron Michael Roy") for consistency with new domain
+
+**Issues encountered:**
+- **None** - Deployment went smoothly with all systems working as expected
+
+**Verification completed:**
+- ✅ Production build successful (33 pages including new 404)
+- ✅ Sitemap verified: All 32 URLs use `https://aaronroy.com` (0 references to old domain)
+- ✅ Canonical URLs confirmed on all pages
+- ✅ Open Graph and Twitter Card meta tags use new domain
+- ✅ Custom 404 page displays correctly with proper HTTP 404 status
+- ✅ Vercel Analytics script injected on all pages
+- ✅ Preview site live at https://aaronroy-com.vercel.app/
+- ✅ SSL certificates generating for custom domains
+
+**Deployment status:**
+- **Preview URL**: https://aaronroy-com.vercel.app/ (live and tested)
+- **Custom domains**: aaronroy.com and www.aaronroy.com (SSL provisioning in progress)
+- **Analytics**: Enabled in Vercel dashboard, ready to track once DNS propagates
+- **DNS**: Configured at domain registrar, awaiting propagation (1-48 hours)
+
+**Updated launch checklist:**
+
+**🎉 COMPLETED:**
+1. ✅ Custom 404 page created and deployed
+2. ✅ Vercel Analytics installed and enabled
+3. ✅ URL validation testing - all 29 blog posts verified with correct URLs
+4. ✅ Deployed to Vercel production
+5. ✅ Custom domains added in Vercel
+6. ✅ DNS records configured (awaiting propagation)
+7. ✅ SSL certificates provisioning
+
+**⏳ IN PROGRESS:**
+1. **DNS propagation** - Waiting for DNS to resolve (1-48 hours, typically 15 minutes)
+2. **SSL certificate generation** - Vercel provisioning certificates for both domains
+
+**🚨 REMAINING BLOCKERS (Before announcing launch):**
+1. **Mobile responsive testing** - Effort: 20 min - Priority: HIGH
+   - Test https://aaronroy.com on iPhone (Safari)
+   - Test on Android (Chrome)
+   - Verify navigation, images, and typography render correctly on mobile devices
+
+**Total remaining blocker effort: 20 minutes**
+
+**🎨 NICE-TO-HAVES (Post-launch optimization):**
+1. Submit sitemap to Google Search Console - Effort: 10 min
+2. Create default OG image (1200x630px) - Effort: 30 min
+3. Run Lighthouse audit for performance baseline - Effort: 15 min
+4. Add RSS feed with @astrojs/rss - Effort: 45 min
+5. Image optimization (WebP conversion) - Effort: 60 min
+6. Set up error tracking (Sentry) - Effort: 30 min
+
+**Priority order for next session:**
+1. Wait for DNS propagation and SSL certificate completion
+2. Mobile responsive testing on real devices
+3. Monitor analytics for first 24-48 hours
+4. Submit sitemap to Google Search Console
+5. Run Lighthouse audit
+
+**Outcomes:**
+- Site is 95% live - only waiting on DNS propagation
+- All critical pre-launch tasks completed (404, analytics, deployment, DNS)
+- Preview URL fully functional and tested
+- Custom domains configured with SSL certificates provisioning
+- Analytics ready to track traffic once DNS resolves
+- Only remaining blocker is mobile testing before public announcement
+- **SITE READY FOR LAUNCH** once SSL certificates complete
+
 ### 2025-10-05: Documentation Sync & Launch Readiness Review
 
 **What we built/modified:**
