@@ -13,7 +13,7 @@ export const SITE = {
 
 export const AUTHOR = {
   name: 'Aaron Roy',
-  legalName: 'Aaron Michael Roy', // Used for copyright and legal purposes
+  legalName: 'Aaron Roy', // Used for copyright and legal purposes
   email: 'aaron@aaronroy.com',
   url: 'https://aaronroy.com',
   location: 'Brooklyn, NY',
