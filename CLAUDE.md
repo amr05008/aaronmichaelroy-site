@@ -106,8 +106,10 @@ The site includes comprehensive SEO features:
 ### SEO Notes
 
 - **Favicon**: Custom branded favicon installed in `public/favicon.svg`
-- OG images are optional (no default image to avoid 404s)
-- Hero images not currently used (field exists but posts have no images)
+- **OG Images**: Default fallback image at `public/images/og-default.png` used for all social sharing (LinkedIn, Facebook, Twitter)
+  - Individual posts can override with custom images via `heroImage` frontmatter field
+  - Custom images should be 1200×630px and stored in `public/og-images/` or `public/images/`
+  - Example: `heroImage: "/og-images/my-custom-image.png"`
 - Consider adding author social profiles to structured data for enhanced rich results
 
 ## Deployment
@@ -120,6 +122,44 @@ Optimized for Vercel:
 SSL and DNS configured for custom domain (aaronroy.com).
 
 ## Session History
+
+### 2025-10-10: OG Image System Implementation
+
+**What we built/modified:**
+- Implemented hybrid OG image system with default fallback at `public/images/og-default.png`
+- Updated `src/layouts/BaseLayout.astro` to use default OG image instead of `null` when no custom image specified
+- Fixed `src/layouts/BlogPost.astro` to pass `heroImage` prop to BaseLayout (critical bug fix)
+- Created `public/og-images/` directory structure for custom post images
+- Added first custom OG image for "Making migrations fun with Claude Code" post
+- Updated CLAUDE.md SEO Notes with OG image documentation
+
+**Technical decisions:**
+- **Hybrid approach**: Chose default fallback + optional custom images (Option 3) for best balance of immediate coverage and future flexibility
+- **Absolute URLs**: Used `new URL(path, Astro.site).toString()` for OG tags to ensure social platforms can fetch images correctly
+- **Directory structure**: Created separate `public/og-images/` folder to keep custom OG images organized apart from blog post content images
+- **Always render tags**: Removed conditional rendering of `og:image` and `twitter:image` meta tags to ensure LinkedIn/Facebook always have image metadata
+- **Image specs**: Standardized on 1200×630px (LinkedIn/Facebook/Twitter requirement) for all OG images
+
+**Issues encountered:**
+- **File location mismatch**: User created `public/images/og-images/` instead of `public/og-images/` - moved file to match frontmatter path
+- **Frontmatter parsing**: Blank line inside YAML frontmatter prevented proper parsing - removed empty line
+- **Missing prop passthrough**: `BlogPost.astro` received `heroImage` from frontmatter but didn't forward to `BaseLayout` - added `ogImage={heroImage}` parameter (root cause of custom images not working)
+- **Browser caching**: Dev server updated but browser showed cached OG tags - resolved with hard refresh
+
+**Verification completed:**
+- ✅ Default OG image fallback working for all posts without custom images
+- ✅ Custom OG image override working via `heroImage` frontmatter field
+- ✅ OG meta tags generate absolute URLs (`https://aaronroy.com/...`)
+- ✅ Dev server hot-reload working for content and layout changes
+- ✅ Production build successful (33 pages)
+- ✅ Custom image accessible at `/og-images/making-migrations-fun-with-claude-code.png`
+
+**Outcomes:**
+- All 29 blog posts now have OG images for social sharing (LinkedIn, Facebook, Twitter)
+- Default branded image provides consistent fallback across entire site
+- Simple frontmatter addition (`heroImage: "/og-images/filename.png"`) enables custom images per post
+- Social sharing now displays rich previews with images instead of text-only
+- System documented and ready for production deployment
 
 ### 2025-10-06: Production Deployment - 404 Page, Analytics & DNS Cutover
 
