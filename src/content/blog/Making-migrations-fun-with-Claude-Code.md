@@ -74,13 +74,13 @@ Some of the tasks we accomplished for this project included:
 
 Claude helped me understand how to end a session to make it easy to restart the next day as well as how to restart a session being ready to jump right back into the to do list. 
 
-This is as an example of me giving context to Claude Code while picking this project back up after some time away. Claude Code was able to use the [claude.md](http://claude.md) file, plus the additional context I provided to adjust the projectplan to accomodate the transition from [aaronmichaelroy.com](http://aaronmichaelroy.com) to [aaronroy.com](http://aaronroy.com). 
+This is as an example of me giving context to Claude Code while picking this project back up after some time away. Claude Code was able to use the CLAUDE.md file, plus the additional context I provided to adjust the projectplan to accomodate the transition from [aaronmichaelroy.com](http://aaronmichaelroy.com) to [aaronroy.com](http://aaronroy.com). 
 
 ![claude-code-restarting-session.png](/images/claude-code-restarting-session.png)
 
 I was able to complete this project after my daughters bedtime across two weekend nights. In total, it took me about ~6 hours to go from project planning to having the new site built and polished enough to set up 301 redirects from my original website. I’m now able to confidently say goodbye to my paid Wordpress hosting and Elementor plans.  
 
-I still have a few open items to do but at this point, it’s window dressing compared to what’s been done thus far. Even better is that open items for “finishing” the project are in the [claude.md](http://claude.md) file and readme so I can easily pick this back up whenever I’d like. 
+I still have a few open items to do but at this point, it’s window dressing compared to what’s been done thus far. Even better is that open items for “finishing” the project are in the CLAUDE.md file and readme so I can easily pick this back up whenever I’d like. 
 
 You can check out the source code behind this entire project at [amr05008/aaronroy.com](https://github.com/amr05008/aaronroy.com)
 

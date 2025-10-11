@@ -357,32 +357,6 @@ SSL and DNS configured for custom domain (aaronroy.com).
 - **Effort estimation**: Added time estimates to help prioritize remaining work
 - **Project structure accuracy**: Updated file tree to match actual implementation (highlights.ts, Yoast script, favicon, robots.txt)
 
-**Issues encountered:**
-- **Git credentials**: Push failed due to missing git credentials - requires manual `git push origin main`
-- **Todo list staleness**: Initial todo included already-completed items (favicon, SEO), required cleanup
-
-**Updated launch checklist for aaronroy.com:**
-
-**🚨 BLOCKERS (Must complete before DNS cutover):**
-1. **Create custom 404 page** - Effort: 20 min - Priority: HIGH
-   - Create `src/pages/404.astro` with branded error page
-   - Test 404 behavior in production build
-
-2. **Install analytics** - Effort: 15 min - Priority: HIGH
-   - Choose provider (Google Analytics, Plausible, or Fathom)
-   - Add tracking code to BaseLayout.astro
-   - Verify tracking in preview environment
-
-3. **URL validation testing** - Effort: 30 min - Priority: HIGH
-   - Deploy to Vercel preview
-   - Test all 29 blog post URLs match WordPress
-   - Verify /about, /writing, and homepage load correctly
-
-4. **Mobile responsive testing** - Effort: 20 min - Priority: HIGH
-   - Test on iPhone (Safari)
-   - Test on Android (Chrome)
-   - Verify navigation, images, and typography render correctly
-
 **Total blocker effort: ~85 minutes (1.5 hours)**
 
 **✅ DEPLOYMENT STEPS (Sequential after blockers complete):**
