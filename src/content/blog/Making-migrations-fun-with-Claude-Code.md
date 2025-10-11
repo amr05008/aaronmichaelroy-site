@@ -11,7 +11,7 @@ The quest of completing this task, started a migration bonanza that ended up wit
 
 ### The first project
 
-My [TDF fantasy app](https://fantasy-tdf-2025.streamlit.app/) was [originally created and hosted](https://aaronroy.com/vibe-coding-a-tour-de-france-app-using-replit-and-google-sheets) via Replit. I was spending ~$25 a month to keep my Replit account (and the hosting it provides) active. Knowing I wanted to switch to Claude Code for future iterations and not wanting to pay Replit only for hosting, I turned to Claude Code to help me figure out where to swap my hosting so I could cancel my Replit account. 
+My [TDF fantasy app](https://fantasy-tdf-2025.streamlit.app/) was [originally created and hosted](https://aaronroy.com/vibe-coding-a-tour-de-france-app-using-replit-and-google-sheets) via Replit. I was spending ~$25 a month to keep my Replit account (and the hosting it provides) active. I wanted to try out Claude Code so this was the perfect test project to see if I could figure out a new home for the TDF app and eventually cancel my Replit hosting. 
 
 I estimated this project would take me ~4 or so hours to complete between research, planning and doing. I was happily surprised to be quite wrong. It took me about 60 minutes go from initial conversation to **completed project**! 
 
