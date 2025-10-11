@@ -4,10 +4,6 @@ description: "Claude Code made completing a boring migration fun. Here is how I 
 pubDate: 2025-10-10
 categories: ["Thoughts and opinions"]
 ---
-asidjaoisdjioasjdoaisjdiaosj
-
-
-
 I had a “simple” question as a starting point. How could I use Claude Code to swap my tour de france fantasy app from being hosted on Replit to a free tier option? 
 
 The quest of completing this task, started a migration bonanza that ended up with this website and 8+ years of content being migrated from Wordpress to an Astro-based static site.
