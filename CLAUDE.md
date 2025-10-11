@@ -87,9 +87,23 @@ This script extracts `_yoast_wpseo_metadesc` values from WordPress postmeta and 
 
 ## Configuration
 
+- **Site metadata**: Centralized in `src/config.ts` (site title, description, author info, social profiles)
 - **Site URL**: Set in `astro.config.mjs` as `site: 'https://aaronroy.com'`
 - **Syntax highlighting**: Uses `github-dark` theme (configured in `astro.config.mjs`)
 - **Integrations**: MDX, Sitemap, Tailwind CSS
+
+### Site Config (`src/config.ts`)
+
+The `src/config.ts` file contains centralized site metadata used across all layouts and pages:
+
+- `SITE`: Site title, description, and URL
+- `AUTHOR`: Author name, legal name (for copyright), email, location, and social profile URLs
+
+To update author information site-wide, edit `src/config.ts`. Changes automatically apply to:
+- Page titles and meta descriptions
+- Footer copyright notice
+- JSON-LD structured data (author and publisher fields)
+- Social profile links in structured data
 
 ## SEO Optimizations
 
@@ -98,7 +112,9 @@ The site includes comprehensive SEO features:
 - **Meta descriptions**: All 29 posts have handcrafted SEO descriptions
 - **Canonical URLs**: Set on all pages to match WordPress URL structure (/{slug})
 - **Open Graph tags**: Complete OG and Twitter Card metadata in BaseLayout
-- **Structured data**: JSON-LD BlogPosting schema on all blog posts
+- **Structured data**: JSON-LD BlogPosting schema on all blog posts with enhanced author metadata
+  - Includes author name, URL, and `sameAs` array linking to Twitter, LinkedIn, and GitHub profiles
+  - Helps search engines understand author identity across platforms for rich results
 - **Sitemap**: Auto-generated via @astrojs/sitemap integration
 - **robots.txt**: Located in `public/robots.txt` with sitemap reference
 - **Homepage meta**: Custom description set in index.astro (not using generic fallback)
@@ -110,7 +126,7 @@ The site includes comprehensive SEO features:
   - Individual posts can override with custom images via `heroImage` frontmatter field
   - Custom images should be 1200×630px and stored in `public/og-images/` or `public/images/`
   - Example: `heroImage: "/og-images/my-custom-image.png"`
-- Consider adding author social profiles to structured data for enhanced rich results
+- **Author metadata**: Centralized in `src/config.ts` with social profile links included in structured data for enhanced rich results
 
 ## Deployment
 
@@ -122,6 +138,44 @@ Optimized for Vercel:
 SSL and DNS configured for custom domain (aaronroy.com).
 
 ## Session History
+
+### 2025-10-10 (Later): Centralized Site Configuration & Enhanced Author Metadata
+
+**What we built/modified:**
+- Created centralized site configuration file at `src/config.ts`
+- Defined `SITE` constant with title, description, and URL
+- Defined `AUTHOR` constant with name, legal name, email, location, and social profile URLs
+- Updated `src/layouts/BaseLayout.astro` to import and use centralized config
+- Updated `src/layouts/BlogPost.astro` to import and use centralized author config
+- Enhanced JSON-LD structured data with author URL and `sameAs` social profile array
+- Updated footer copyright to use `AUTHOR.legalName` from config
+- Updated navigation and titles to use `SITE.title` from config
+
+**Technical decisions:**
+- **Centralized config approach**: Created single source of truth (`src/config.ts`) for all site metadata to avoid hardcoded values scattered across files
+- **TypeScript constants**: Used `as const` to make configuration values readonly and type-safe
+- **Dual naming**: Separated `AUTHOR.name` ("Aaron Roy" for public display) from `AUTHOR.legalName` ("Aaron Michael Roy" for copyright/legal purposes)
+- **Schema.org `sameAs`**: Added array of social profile URLs to help search engines understand author identity across platforms
+- **Social profiles included**: Twitter, LinkedIn, GitHub (can easily extend with more platforms)
+
+**Issues encountered:**
+- **None** - Straightforward refactoring with TypeScript providing immediate feedback on any missing imports or references
+
+**Verification completed:**
+- ✅ Production build successful (33 pages, 1.28s)
+- ✅ JSON-LD structured data includes enhanced author metadata with social profiles
+- ✅ Footer shows correct copyright: "© 2025 Aaron Michael Roy"
+- ✅ Site title consistently uses "Aaron Roy" across all pages
+- ✅ All imports resolved correctly with no TypeScript errors
+- ✅ Dev server hot-reload working for config changes
+
+**Outcomes:**
+- Single file (`src/config.ts`) now controls all site metadata site-wide
+- Enhanced SEO with author social profiles in structured data (helps Google Knowledge Graph)
+- Easy to update author information, social links, or site details in one place
+- Type-safe configuration prevents typos and missing values
+- Addresses previous SEO note: "Consider adding author social profiles to structured data for enhanced rich results" ✓
+- Future-proof: Can easily add more author fields (bio, image, etc.) or social profiles as needed
 
 ### 2025-10-10: OG Image System Implementation
 

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { AUTHOR } from '../config';
 
 interface Props {
   title: string;
@@ -83,11 +84,18 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     "dateModified": (updatedDate || pubDate).toISOString(),
     "author": {
       "@type": "Person",
-      "name": "Aaron Michael Roy"
+      "name": AUTHOR.name,
+      "url": AUTHOR.url,
+      "sameAs": [
+        AUTHOR.social.twitter,
+        AUTHOR.social.linkedin,
+        AUTHOR.social.github,
+      ]
     },
     "publisher": {
       "@type": "Person",
-      "name": "Aaron Michael Roy"
+      "name": AUTHOR.name,
+      "url": AUTHOR.url
     }
   })} />
 </BaseLayout>
