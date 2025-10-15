@@ -1,6 +1,6 @@
-# Aaron Michael Roy - Personal Blog
+# Aaron Roy - Personal Blog
 
-Modern, fast static site built with Astro and Tailwind CSS. Migrated from WordPress.
+Modern, fast static site built with Astro and Tailwind CSS. Migrated from WordPress and live at [aaronroy.com](https://aaronroy.com).
 
 ## Tech Stack
 
@@ -75,12 +75,15 @@ This script will:
 /
 ├── public/               # Static assets
 │   ├── images/          # Blog post images (54+ images)
+│   │   └── og-default.png  # Default Open Graph image for social sharing
+│   ├── og-images/       # Custom OG images for individual posts
 │   ├── favicon.svg      # Custom branded favicon
 │   └── robots.txt       # Search engine directives
 ├── scripts/
 │   ├── migrate-wordpress.js        # WordPress XML to Markdown migration
 │   └── update-yoast-descriptions.js # Extract Yoast SEO descriptions
 ├── src/
+│   ├── config.ts        # Centralized site metadata (title, author, social profiles)
 │   ├── content/
 │   │   ├── blog/        # Blog posts (29 markdown files)
 │   │   └── config.ts    # Content collections schema
@@ -93,6 +96,7 @@ This script will:
 │   │   ├── index.astro        # Homepage with Highlights
 │   │   ├── about.astro        # About page
 │   │   ├── writing.astro      # Blog archive
+│   │   ├── 404.astro          # Custom branded 404 page
 │   │   └── [...slug].astro    # Dynamic blog post routes
 │   └── styles/
 │       └── global.css         # Tailwind imports
@@ -155,13 +159,16 @@ URLs are automatically generated from the markdown filename/slug to preserve Wor
 
 ## SEO Features
 
-- **Meta descriptions**: All 29 posts have handcrafted SEO descriptions
+- **Meta descriptions**: All 29 posts have handcrafted SEO descriptions (100% coverage)
 - **Canonical URLs**: Match WordPress structure (`/{slug}`) for SEO preservation
-- **Open Graph & Twitter Cards**: Complete social sharing metadata
-- **Structured data**: JSON-LD BlogPosting schema on all posts
+- **Open Graph & Twitter Cards**: Complete social sharing metadata with hybrid OG image system
+- **OG Images**: Default fallback at `/images/og-default.png` + custom per-post images via `heroImage` frontmatter
+- **Structured data**: JSON-LD BlogPosting schema with enhanced author metadata (includes social profiles)
+- **Centralized config**: Site metadata managed in `src/config.ts` (title, author, Twitter/LinkedIn/GitHub profiles)
 - **Sitemap**: Auto-generated at `/sitemap-index.xml` via @astrojs/sitemap
 - **robots.txt**: Configured with sitemap reference
 - **Custom favicon**: Branded icon in `public/favicon.svg`
+- **Analytics**: Vercel Analytics installed (privacy-friendly, no cookie consent needed)
 
 ## Homepage Highlights
 
@@ -171,44 +178,54 @@ The homepage features a curated "Highlights" section instead of recent posts. To
 2. Update the array of post slugs in your preferred order
 3. Changes hot-reload automatically in dev mode
 
-## Deployment Status
+## Production Deployment
 
-### ✅ Completed (75% Ready)
+### 🎉 LIVE IN PRODUCTION
+
+**Site URL**: [https://aaronroy.com](https://aaronroy.com)
+**Preview/Staging**: [https://aaronroy-com.vercel.app](https://aaronroy-com.vercel.app)
+**Deployed**: October 6, 2025
+
+### ✅ Completed Features
+
+**Content Migration:**
 - [x] All 29 WordPress posts migrated to Markdown
 - [x] 54+ images migrated to `public/images/`
 - [x] URL structure matches WordPress exactly (`/{slug}`)
 - [x] SEO descriptions on all 29 posts (100% coverage)
-- [x] Custom branded favicon installed
-- [x] Sitemap and robots.txt configured
-- [x] About page with bio and contact links
-- [x] Production build tested (32 pages, 1.14s build time)
 - [x] Highlights feature for homepage curation
 
-### 🔲 Critical Pre-Launch Tasks
+**SEO & Analytics:**
+- [x] Custom branded favicon installed
+- [x] Sitemap and robots.txt configured
+- [x] Vercel Analytics installed
+- [x] Custom 404 page created
+- [x] Hybrid OG image system (default + custom per-post)
+- [x] Enhanced JSON-LD structured data with author social profiles
+- [x] Centralized site configuration (`src/config.ts`)
 
-Before pointing DNS to Vercel:
+**Deployment:**
+- [x] Deployed to Vercel with SSL
+- [x] Custom domain configured (aaronroy.com + www)
+- [x] DNS cutover complete
+- [x] Production build tested (33 pages, ~1.2s build time)
 
-1. **Create custom 404 page** (`src/pages/404.astro`)
-2. **Install analytics** (Google Analytics, Plausible, or Fathom)
-3. **Test all 29 blog URLs** in production preview environment
-4. **Mobile testing** on actual devices (phone, tablet)
+### 🔄 Domain Migration
 
-### 🚀 Deployment Steps
+**Old domain**: [aaronmichaelroy.com](https://aaronmichaelroy.com) (active through 2029)
+**301 Redirects**: All URLs from old domain redirect to aaronroy.com
+**Google Search Console**: Change of Address submitted October 6, 2025
 
-5. Deploy to Vercel staging environment
-6. Configure custom domain (`aaronroy.com`) in Vercel
-7. Update DNS records to point to Vercel
-8. Verify SSL certificate provisioning
-9. Monitor first 24-48 hours for 404s and issues
+The old domain will remain active with permanent 301 redirects to preserve SEO value from backlinks and catch long-tail traffic.
 
-### 📈 Post-Launch Optimization
+### 📈 Future Enhancements
 
-10. Submit sitemap to Google Search Console
-11. Create default OG image for social sharing (`/public/og-image.png`)
-12. Run Lighthouse audit for performance baseline
-13. Consider adding RSS feed with `@astrojs/rss`
-14. Image optimization (WebP format, compression)
-15. Set up error tracking (Sentry or similar)
+- [ ] Submit sitemap to Google Search Console
+- [ ] Run Lighthouse audit for performance baseline
+- [ ] Consider adding RSS feed with `@astrojs/rss`
+- [ ] Image optimization (WebP format, compression)
+- [ ] Set up error tracking (Sentry or similar)
+- [ ] Mobile responsive testing on additional devices
 
 ## License
 
