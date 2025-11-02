@@ -13,7 +13,7 @@ In the past, we would use Google Sheets to track our respective teams, but the s
 
 ![](/images/vibe-coding-a-tour-de-france-app-using-replit-and-google-sheets-1759632217478.png)
 
-You can check out the working app [here](https://fantasytour.streamlit.app/) << NOTE: This was ported over to streamlit via claude code since this article was first written.
+You can check out the working app [here](https://fantasytour.streamlit.app/) *NOTE: This application was moved off Replit and over to streamlit via claude code since this article was first written.*
 
 Here are some detailed notes on how I built it and what I learned.
 
